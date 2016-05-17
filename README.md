@@ -3,6 +3,6 @@ Inspired Model Exporter (IME) is an annotation based excel and txt data exporter
 
 The project is mantained by Inspired S.r.L. (www.inspiredsoft.it) and Massimo is the Product Manager.
 
-Check the Wiki for a getting started guide or send a message to massimo@inspiredsoft.it for more information.
+Check the Wiki (https://github.com/Inspiredsoft/exporter/wiki) for a getting started guide or send a message to massimo@inspiredsoft.it for more information.
 
 
