@@ -49,7 +49,7 @@ import org.hibernate.proxy.HibernateProxy;
 public abstract class Exporter 
 {
 	private static final Logger log = Logger.getLogger(Exporter.class);
-	
+
 	// Object exported in a row
 	private List<Object> exportedInRow = new ArrayList<Object>();
 	
@@ -76,12 +76,6 @@ public abstract class Exporter
 	
 	//-------------------------------------------------------------------------------------------------
 	// Protected Methods
-	//-------------------------------------------------------------------------------------------------
-	
-	public void init() {
-		currentRow = 0;
-	}
-	
 	//--------------------------------------------------------------------------------------
 	
 	/**
@@ -183,7 +177,11 @@ public abstract class Exporter
 	 */
 	private static Object deproxy(Object proxy) 
 	{
-		if ( proxy instanceof HibernateProxy ) 
+		/*
+		 * Check if it is an HibernateProxy using String equals.
+		 * This should avoid to import Hibernate if it is not used.
+		 */
+		if ( proxy.getClass().getName().equalsIgnoreCase( "org.hibernate.proxy.HibernateProxy" ) ) 
 		{
 			return ( ( HibernateProxy ) proxy ).getHibernateLazyInitializer()
 					 .getImplementation();
@@ -403,6 +401,15 @@ public abstract class Exporter
 	// Public Methods
 	//-------------------------------------------------------------------------------------------------
 	
+	/**
+	 * Should always be called
+	 */
+	public void init() {
+		currentRow = 0;
+	}
+	
+	//-------------------------------------------------------------------------------------------------
+
 	/**
 	 * Start the export process to the given list of object.
 	 * @param list The list of object to export.

@@ -21,6 +21,13 @@ package it.inspired.exporter;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * This class provide an API to write position based text.
+ * Every added string value ha its position in term of row and column. 
+ * 
+ * @author Massimo Romano
+ *
+ */
 public class TextBuilder 
 {	
 	private Integer maxRow  = 0;
@@ -28,16 +35,28 @@ public class TextBuilder
 	private String separator = ";";
 	private Map<String, String> text = new HashMap<String,String>();
 	
+	//---------------------------------------------------------------------------------
+	
 	private String key( Integer row, Integer coll ) {
 		return row + ":" + coll;
 	}
 	
 	//---------------------------------------------------------------------------------
 	
+	/**
+	 * Set the separator to use between values
+	 * @param separator The separator to use
+	 */
 	public void setSeparator( String separator ) {
 		this.separator = separator;
 	}
 	
+	/**
+	 * Add a string value to a specific row and column
+	 * @param row The row number
+	 * @param coll The column number
+	 * @param value The value to add
+	 */
 	public void add( Integer row, Integer coll, String value ) {
 		String key = key(row,coll);
 		text.put( key, value );
@@ -45,6 +64,12 @@ public class TextBuilder
 		maxColl = Math.max( maxColl, coll );
 	}
 	
+	/**
+	 * Get the valued stored in the given row and column 
+	 * @param row The raw number
+	 * @param coll The column number
+	 * @return The value retrieved of the empty string if the cell is empty
+	 */
 	public String get( Integer row, Integer coll ) {
 		String key = key(row,coll);
 		if ( text.containsKey( key ) ) {
@@ -53,6 +78,11 @@ public class TextBuilder
 		return "";
 	}
 	
+	/**
+	 * Build the string with the provided values respecting the given coordinates
+	 * 
+	 * @return The builded string
+	 */
 	public String toString() {
 		StringBuilder str = new StringBuilder();
 		
