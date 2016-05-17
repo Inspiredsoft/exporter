@@ -5,6 +5,8 @@ The project is mantained by Inspired S.r.L. (www.inspiredsoft.it) and Massimo is
 
 Check the Wiki (https://github.com/Inspiredsoft/exporter/wiki) for a getting started guide or send a message to massimo@inspiredsoft.it for more information.
 
+# Donate
+If you are interested in supporting this project please donate a coffee ...
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SSF38JPQXNKWC)
 
