@@ -8,6 +8,9 @@ Check the Wiki (https://github.com/Inspiredsoft/exporter/wiki) for a getting sta
 #Include
 To include the exporter framework in your project check the instructions in the Maven Dependency section of the wiki or download and include the jar in your project: [JAR](https://oss.sonatype.org/service/local/repositories/releases/content/it/inspiredsoft/model-exporter/1.0.1/model-exporter-1.0.1.jar)
 
+#Demo
+For a demo of the framework try our parco project on https://inspiredsoft.github.io/parco/
+
 # Donate
 If you are interested in supporting this project please donate a coffee ...
 
